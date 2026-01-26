@@ -1,15 +1,20 @@
 import {NextIntlClientProvider} from 'next-intl';
+import {notFound} from 'next/navigation';
 
-type Locale = 'es' | 'en';
+const locales = ['es', 'en'] as const;
+type Locale = (typeof locales)[number];
 
-export default async function LocaleLayout({
-  children,
-  params
-}: {
+type Props = {
   children: React.ReactNode;
-  params: Promise<{locale: Locale}>;
-}) {
-  const {locale} = await params;
+  params: {locale: string} | Promise<{locale: string}>;
+};
+
+export default async function LocaleLayout({children, params}: Props) {
+  // Soporta params sync o Promise (Next 16 dev vs build)
+  const resolvedParams = await Promise.resolve(params);
+  const locale = resolvedParams.locale;
+
+  if (!locales.includes(locale as Locale)) notFound();
 
   const messages = (await import(`../../messages/${locale}.json`)).default;
 
@@ -19,3 +24,4 @@ export default async function LocaleLayout({
     </NextIntlClientProvider>
   );
 }
+

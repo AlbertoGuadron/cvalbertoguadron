@@ -7,12 +7,13 @@ import {Mail, MapPin, Github, Linkedin, ExternalLink} from 'lucide-react';
 
 type Locale = 'es' | 'en';
 
-export default async function Page({
-  params
-}: {
-  params: Promise<{locale: Locale}>;
-}) {
-  const {locale} = await params;
+type PageProps = {
+  params: { locale: string } | Promise<{ locale: string }>;
+};
+
+export default async function Page({ params }: PageProps) {
+  const resolvedParams = await Promise.resolve(params);
+  const locale = resolvedParams.locale as Locale;
   const t = await getTranslations({locale});
 
   const skills = t.raw('skills') as {
