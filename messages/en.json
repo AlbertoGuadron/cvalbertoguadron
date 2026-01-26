@@ -1,0 +1,95 @@
+{
+  "name": "ALBERTO RENÉ GUADRÓN RAMOS",
+  "role": "Full Stack Developer | Front-End | Back-End | Mobile & Desktop Applications",
+  "locationLine": "San Salvador, El Salvador | +503 7231-9551 | albertoguadron@gmail.com",
+
+  "summaryTitle": "Professional summary",
+  "summary": "Full Stack Developer with experience in Front-End and Back-End web development, as well as mobile and desktop applications. Since 2023, I have been working as a freelance developer, building modern, optimized, and scalable websites using current technologies such as Next.js. I also bring previous experience in data analysis, IT support, and operational leadership, allowing me to contribute a comprehensive and strategic perspective to projects.",
+
+  "skillsTitle": "Technical skills",
+  "skills": {
+    "languagesLabel": "Languages",
+    "languagesValue": "HTML, CSS, JavaScript, PHP, Java, Python, C++, SQL",
+    "frameworksLabel": "Frameworks",
+    "frameworksValue": "Next.js",
+    "toolsLabel": "Tools",
+    "toolsValue": "Visual Studio Code, GitHub, Vercel, Unity",
+    "otherLabel": "Other",
+    "otherValue": "Mobile and desktop application development, software maintenance"
+  },
+
+  "experienceTitle": "Professional experience",
+  "experience": [
+    {
+      "title": "Freelance Web Developer",
+      "date": "2023 – Present",
+      "bullets": [
+        "Development of modern and responsive websites.",
+        "Front-End and Back-End implementation.",
+        "Project deployment using Vercel.",
+        "Version control with GitHub."
+      ],
+      "projectsTitle": "Featured projects",
+      "projects": [
+        { "label": "Pride Restoration", "url": "https://priderestorationusa.com" },
+        { "label": "Luna Construction", "url": "https://lunaconstructionusa.com" },
+        { "label": "911 Plumbing", "url": "https://911plumbingusa.com" },
+        { "label": "Golden Vista", "url": "https://goldenvistains.com" }
+      ]
+    },
+    {
+      "title": "Digital Insights | Data Analyst / IT",
+      "date": "2015 – Present",
+      "bullets": [
+        "Leadership and coordination of analytics teams.",
+        "Database analysis and social listening.",
+        "Creation of reputation and performance reports.",
+        "IT support, hardware maintenance, and software installation."
+      ]
+    },
+    {
+      "title": "Conexión de Redes | Operations Director / IT",
+      "date": "2022 – Present",
+      "bullets": [
+        "Management of technology projects.",
+        "Coordination of technical teams.",
+        "IT support and administrative assistance."
+      ]
+    },
+    {
+      "title": "ARENA Presidential Campaign – Carlos Calleja | Data Analyst",
+      "date": "2018 – 2019",
+      "bullets": [
+        "Database analysis and social listening for political campaigns.",
+        "Creation of daily reputation reports.",
+        "Crisis alerts and IT support."
+      ]
+    },
+    {
+      "title": "Private Computer Instructor",
+      "date": "2010 – 2013",
+      "bullets": [
+        "Computer literacy training for older adults."
+      ]
+    }
+  ],
+
+  "educationTitle": "Education",
+  "education": [
+    "Computer Engineering Technician – Universidad Don Bosco (2020 – 2023)",
+    "Bachelor’s Degree in Computer Science (3rd year completed) – UCA (2013 – 2015)"
+  ],
+
+  "languagesTitle": "Languages",
+  "languages": [
+    "Spanish: Native",
+    "English: Advanced"
+  ],
+
+  "competenciesTitle": "Core competencies",
+  "competencies": "Analytical thinking, problem-solving, troubleshooting, teamwork, responsibility, strong work ethic, and continuous learning mindset.",
+
+  "downloadTitle": "Download CV",
+  "downloadEs": "Download CV (Spanish)",
+  "downloadEn": "Download CV (English)"
+}

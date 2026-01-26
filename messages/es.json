@@ -1,0 +1,95 @@
+{
+  "name": "ALBERTO RENÉ GUADRÓN RAMOS",
+  "role": "Desarrollador Full Stack | Front-End | Back-End | Apps Móviles y de Escritorio",
+  "locationLine": "San Salvador, El Salvador | +503 7231-9551 | albertoguadron@gmail.com",
+
+  "summaryTitle": "Perfil profesional",
+  "summary": "Desarrollador Full Stack con experiencia en desarrollo web Front-End y Back-End, así como en aplicaciones móviles y de escritorio. Desde 2023 trabajo como freelancer desarrollando sitios web modernos, optimizados y escalables utilizando tecnologías actuales como Next.js. Cuento con experiencia previa en análisis de datos, soporte IT y liderazgo operativo, lo que me permite tener una visión integral de los proyectos.",
+
+  "skillsTitle": "Habilidades técnicas",
+  "skills": {
+    "languagesLabel": "Lenguajes",
+    "languagesValue": "HTML, CSS, JavaScript, PHP, Java, Python, C+, SQL",
+    "frameworksLabel": "Frameworks",
+    "frameworksValue": "Next.js",
+    "toolsLabel": "Herramientas",
+    "toolsValue": "Visual Studio Code, GitHub, Vercel, Unity",
+    "otherLabel": "Otros",
+    "otherValue": "Desarrollo de apps móviles y de escritorio, mantenimiento de software"
+  },
+
+  "experienceTitle": "Experiencia profesional",
+  "experience": [
+    {
+      "title": "Desarrollador Web Freelance",
+      "date": "2023 – Actualidad",
+      "bullets": [
+        "Desarrollo de sitios web modernos y responsivos.",
+        "Implementación Front-End y Back-End.",
+        "Despliegue de proyectos en Vercel.",
+        "Control de versiones con GitHub."
+      ],
+      "projectsTitle": "Proyectos destacados",
+      "projects": [
+        { "label": "Pride Restoration", "url": "https://priderestorationusa.com" },
+        { "label": "Luna Construction", "url": "https://lunaconstructionusa.com" },
+        { "label": "911 Plumbing", "url": "https://911plumbingusa.com" },
+        { "label": "Golden Vista", "url": "https://goldenvistains.com" }
+      ]
+    },
+    {
+      "title": "Digital Insights | Analista de Datos / IT",
+      "date": "2015 – Actualidad",
+      "bullets": [
+        "Dirección de equipos de análisis.",
+        "Análisis de bases de datos y social listening.",
+        "Creación de reportes de reputación.",
+        "Soporte IT, mantenimiento de hardware e instalación de software."
+      ]
+    },
+    {
+      "title": "Conexión de Redes | Director de Operaciones / IT",
+      "date": "2022 – Actualidad",
+      "bullets": [
+        "Administración de proyectos tecnológicos.",
+        "Coordinación de técnicos.",
+        "Soporte IT y apoyo administrativo."
+      ]
+    },
+    {
+      "title": "Campaña Presidencial ARENA – Carlos Calleja | Analista de Datos",
+      "date": "2018 – 2019",
+      "bullets": [
+        "Análisis de bases de datos y social listening.",
+        "Creación de reportes de reputación.",
+        "Alertas de crisis y soporte IT."
+      ]
+    },
+    {
+      "title": "Clases Particulares de Computación",
+      "date": "2010 – 2013",
+      "bullets": [
+        "Clases de computación básica para adultos mayores."
+      ]
+    }
+  ],
+
+  "educationTitle": "Formación académica",
+  "education": [
+    "Técnico en Ingeniería en Computación – Universidad Don Bosco (2020 – 2023)",
+    "Licenciatura en Ciencias de la Computación (3° año) – UCA (2013 – 2015)"
+  ],
+
+  "languagesTitle": "Idiomas",
+  "languages": [
+    "Español: Nativo",
+    "Inglés: Avanzado"
+  ],
+
+  "competenciesTitle": "Competencias",
+  "competencies": "Pensamiento analítico, resolución de problemas, trabajo en equipo, responsabilidad, ética profesional y aprendizaje continuo.",
+
+  "downloadTitle": "Descargar CV",
+  "downloadEs": "Descargar CV (Español)",
+  "downloadEn": "Descargar CV (English)"
+}
