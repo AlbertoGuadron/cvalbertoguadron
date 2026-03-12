@@ -11,9 +11,9 @@
     "languagesLabel": "Lenguajes",
     "languagesValue": "HTML, CSS, JavaScript, PHP, Java, Python, C+, SQL",
     "frameworksLabel": "Frameworks",
-    "frameworksValue": "Next.js",
+    "frameworksValue": "Next.js, React",
     "toolsLabel": "Herramientas",
-    "toolsValue": "Visual Studio Code, GitHub, Vercel, Unity",
+    "toolsValue": "Visual Studio Code, GitHub, Vercel, Unity, SupaBase",
     "otherLabel": "Otros",
     "otherValue": "Desarrollo de apps móviles y de escritorio, mantenimiento de software"
   },
