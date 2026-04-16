@@ -2,6 +2,10 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+html {
+  scroll-behavior: smooth;
+}
+
 html, body { height: 100%; }
 
 /* Light mode: fondo con gradiente suave azul/violeta */
@@ -20,4 +24,56 @@ body {
     radial-gradient(900px 500px at 10% 0%,  rgba(99, 102, 241, 0.18), transparent),
     radial-gradient(800px 500px at 90% 10%, rgba(168, 85, 247, 0.14), transparent),
     radial-gradient(600px 400px at 50% 80%, rgba(59, 130, 246, 0.10), transparent);
+}
+
+/* ── Scroll-reveal animations ─────────────────────────────── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+.reveal.is-visible {
+  animation: fadeInUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Stagger delays for child elements */
+.reveal-stagger > *:nth-child(1) { animation-delay: 0ms; }
+.reveal-stagger > *:nth-child(2) { animation-delay: 60ms; }
+.reveal-stagger > *:nth-child(3) { animation-delay: 120ms; }
+.reveal-stagger > *:nth-child(4) { animation-delay: 180ms; }
+.reveal-stagger > *:nth-child(5) { animation-delay: 240ms; }
+.reveal-stagger > *:nth-child(6) { animation-delay: 300ms; }
+
+/* Stagger for list items inside a revealed parent */
+.reveal.is-visible .stagger-item:nth-child(1) { animation: fadeInUp 0.45s 0.05s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.reveal.is-visible .stagger-item:nth-child(2) { animation: fadeInUp 0.45s 0.10s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.reveal.is-visible .stagger-item:nth-child(3) { animation: fadeInUp 0.45s 0.15s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.reveal.is-visible .stagger-item:nth-child(4) { animation: fadeInUp 0.45s 0.20s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.reveal.is-visible .stagger-item:nth-child(5) { animation: fadeInUp 0.45s 0.25s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.reveal.is-visible .stagger-item:nth-child(6) { animation: fadeInUp 0.45s 0.30s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+/* ── Respect reduced-motion ───────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
 }
