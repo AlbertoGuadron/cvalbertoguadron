@@ -44,9 +44,10 @@ export default async function Page({ params }: PageProps) {
   };
 
   return (
-    <main className="min-h-screen bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100">
-      {/* Header fijo */}
-      <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-slate-950/70 backdrop-blur-md">
+    <main className="min-h-screen text-slate-900 dark:text-slate-100 transition-colors duration-300">
+
+      {/* Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 border-b border-indigo-100/80 bg-white/70 backdrop-blur-md dark:border-white/10 dark:bg-slate-950/70">
         <div className="mx-auto max-w-4xl px-6 py-4 flex items-center justify-end gap-3">
           <ThemeToggle />
           <LanguageSwitcher locale={locale} />
@@ -56,12 +57,18 @@ export default async function Page({ params }: PageProps) {
       {/* HERO */}
       <section className="pt-28 pb-12 px-6">
         <div className="mx-auto max-w-4xl">
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 sm:p-10 shadow-[0_0_0_1px_rgba(255,255,255,0.04),0_30px_80px_rgba(0,0,0,0.45)]">
-            <div className="flex flex-col items-center text-center gap-6">
-              {/* FOTO redonda */}
+          <div className="relative rounded-3xl overflow-hidden border border-indigo-100 bg-white shadow-xl shadow-indigo-100/60 p-8 sm:p-10
+                          dark:border-white/10 dark:bg-white/5 dark:shadow-none">
+            {/* Orbe decorativo de fondo */}
+            <div className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-gradient-to-br from-indigo-400/20 to-purple-400/20 blur-3xl dark:from-indigo-600/20 dark:to-purple-600/20" />
+            <div className="pointer-events-none absolute -bottom-16 -left-16 h-56 w-56 rounded-full bg-gradient-to-tr from-blue-400/15 to-cyan-400/15 blur-3xl dark:from-blue-600/15 dark:to-cyan-600/15" />
+
+            <div className="relative flex flex-col items-center text-center gap-6">
+              {/* Foto */}
               <div className="relative">
-                <div className="pointer-events-none absolute -inset-1 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-90" />
-                <div className="relative rounded-full bg-slate-950 p-1">
+                <div className="pointer-events-none absolute -inset-1 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-90 blur-sm" />
+                <div className="pointer-events-none absolute -inset-1 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-90" />
+                <div className="relative rounded-full bg-white p-1 dark:bg-slate-950">
                   <Image
                     src="/img/profile.jpg"
                     alt="Alberto Guadron"
@@ -73,55 +80,55 @@ export default async function Page({ params }: PageProps) {
                 </div>
               </div>
 
-              {/* Nombre + Role */}
+              {/* Nombre */}
               <div className="space-y-2">
-                <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight">
+                <h1 className="text-4xl sm:text-5xl font-bold tracking-tight bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400">
                   {t('name')}
                 </h1>
-                <p className="text-lg sm:text-xl text-slate-300">
+                <p className="text-lg sm:text-xl font-medium text-slate-600 dark:text-slate-300">
                   {t('role')}
                 </p>
               </div>
 
-              {/* Summary centrado */}
-              <p className="max-w-2xl text-slate-300 leading-relaxed">
+              {/* Summary */}
+              <p className="max-w-2xl text-slate-600 leading-relaxed dark:text-slate-400">
                 {t('summary')}
               </p>
 
               {/* Contacto */}
-              <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-slate-300">
+              <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-slate-500 dark:text-slate-400">
                 <div className="flex items-center gap-2">
-                  <MapPin className="h-4 w-4 text-blue-400" />
+                  <MapPin className="h-4 w-4 text-indigo-500 dark:text-blue-400" />
                   <span>{t('locationLine')}</span>
                 </div>
-
                 <a
                   href={`mailto:${links.email}`}
-                  className="flex items-center gap-2 hover:text-blue-300 transition-colors"
+                  className="flex items-center gap-2 hover:text-indigo-600 dark:hover:text-blue-300 transition-colors"
                 >
-                  <Mail className="h-4 w-4 text-blue-400" />
+                  <Mail className="h-4 w-4 text-indigo-500 dark:text-blue-400" />
                   <span>{links.email}</span>
                 </a>
               </div>
 
-              {/* Social buttons */}
+              {/* Social */}
               <div className="flex flex-wrap justify-center gap-3 pt-1">
                 <a
                   href={links.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm hover:border-blue-400/60 hover:bg-white/10 transition-all"
+                  className="inline-flex items-center gap-2 rounded-xl border border-indigo-200 bg-indigo-50 px-4 py-2 text-sm font-medium text-indigo-700 hover:bg-indigo-100 hover:border-indigo-300 transition-all
+                             dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:border-blue-400/60 dark:hover:bg-white/10"
                 >
                   <Github className="h-4 w-4" />
                   GitHub
                   <ExternalLink className="h-3.5 w-3.5 opacity-60" />
                 </a>
-
                 <a
                   href={links.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm hover:border-blue-400/60 hover:bg-white/10 transition-all"
+                  className="inline-flex items-center gap-2 rounded-xl border border-indigo-200 bg-indigo-50 px-4 py-2 text-sm font-medium text-indigo-700 hover:bg-indigo-100 hover:border-indigo-300 transition-all
+                             dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:border-blue-400/60 dark:hover:bg-white/10"
                 >
                   <Linkedin className="h-4 w-4" />
                   LinkedIn
@@ -131,47 +138,48 @@ export default async function Page({ params }: PageProps) {
             </div>
           </div>
 
-          {/* Divider suave */}
-          <div className="mt-10 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+          <div className="mt-10 h-px w-full bg-gradient-to-r from-transparent via-indigo-200 to-transparent dark:via-white/10" />
         </div>
       </section>
 
       {/* CONTENIDO */}
       <section className="pb-16 px-6">
-        <div className="mx-auto max-w-4xl space-y-12">
+        <div className="mx-auto max-w-4xl space-y-10">
+
           {/* Experiencia */}
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-7 sm:p-9">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-center mb-8">
+          <div className="rounded-3xl border border-indigo-100 bg-white shadow-lg shadow-indigo-50 p-7 sm:p-9
+                          dark:border-white/10 dark:bg-white/5 dark:shadow-none">
+            <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent dark:from-indigo-400 dark:to-purple-400">
               {t('experienceTitle')}
             </h2>
 
             <div className="space-y-10">
               {experience.map((job) => (
-                <div key={`${job.title}-${job.date}`} className="relative pl-7 border-l border-white/10">
-                  <div className="absolute -left-1 top-1.5 h-2.5 w-2.5 rounded-full bg-blue-400" />
+                <div key={`${job.title}-${job.date}`} className="relative pl-7 border-l-2 border-indigo-200 dark:border-white/10">
+                  <div className="absolute -left-[7px] top-1.5 h-3 w-3 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 ring-2 ring-white dark:ring-slate-950" />
 
                   <div className="space-y-3">
                     <div className="text-center sm:text-left">
-                      <h3 className="text-lg sm:text-xl font-semibold">
+                      <h3 className="text-lg sm:text-xl font-semibold text-slate-800 dark:text-slate-100">
                         {job.title}
                       </h3>
-                      <p className="text-sm text-slate-400 mt-1">
+                      <span className="inline-block mt-1 text-xs font-semibold uppercase tracking-wider text-indigo-600 bg-indigo-50 border border-indigo-100 rounded-full px-3 py-0.5 dark:text-indigo-300 dark:bg-indigo-500/10 dark:border-indigo-500/20">
                         {job.date}
-                      </p>
+                      </span>
                     </div>
 
-                    <ul className="space-y-2 text-slate-300">
+                    <ul className="space-y-2 text-slate-600 dark:text-slate-400">
                       {job.bullets.map((bullet, i) => (
                         <li key={i} className="flex gap-3">
-                          <span className="text-blue-400 mt-1">▸</span>
+                          <span className="text-indigo-500 mt-1 dark:text-blue-400">▸</span>
                           <span>{bullet}</span>
                         </li>
                       ))}
                     </ul>
 
                     {job.projects?.length ? (
-                      <div className="mt-4 rounded-2xl border border-white/10 bg-white/5 p-4">
-                        <p className="text-sm font-semibold mb-3 text-center sm:text-left">
+                      <div className="mt-4 rounded-2xl border border-indigo-100 bg-indigo-50/50 p-4 dark:border-white/10 dark:bg-white/5">
+                        <p className="text-sm font-semibold mb-3 text-center sm:text-left text-slate-700 dark:text-slate-300">
                           {job.projectsTitle}
                         </p>
                         <div className="flex flex-wrap justify-center sm:justify-start gap-2">
@@ -181,7 +189,8 @@ export default async function Page({ params }: PageProps) {
                               href={project.url}
                               target="_blank"
                               rel="noreferrer"
-                              className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-200 hover:border-blue-400/60 hover:bg-white/10 transition-all"
+                              className="inline-flex items-center gap-2 rounded-xl border border-indigo-200 bg-white px-3 py-2 text-sm text-indigo-700 hover:bg-indigo-50 hover:border-indigo-300 transition-all shadow-sm
+                                         dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:border-blue-400/60 dark:hover:bg-white/10"
                             >
                               {project.label}
                               <ExternalLink className="h-3.5 w-3.5 opacity-60" />
@@ -196,14 +205,14 @@ export default async function Page({ params }: PageProps) {
             </div>
           </div>
 
-          {/* Skills + Education + Languages + Competencies */}
+          {/* Skills + Education + Languages + Competencias */}
           <div className="grid gap-8 md:grid-cols-2">
             {/* Skills */}
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-7 sm:p-9">
-              <h2 className="text-2xl font-semibold text-center mb-6">
+            <div className="rounded-3xl border border-indigo-100 bg-white shadow-lg shadow-indigo-50 p-7 sm:p-9
+                            dark:border-white/10 dark:bg-white/5 dark:shadow-none">
+              <h2 className="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent dark:from-indigo-400 dark:to-purple-400">
                 {t('skillsTitle')}
               </h2>
-
               <div className="space-y-6">
                 <SkillBlock title={skills.languagesLabel} items={getSkillBadges(skills.languagesValue)} />
                 <SkillBlock title={skills.frameworksLabel} items={getSkillBadges(skills.frameworksValue)} />
@@ -212,13 +221,13 @@ export default async function Page({ params }: PageProps) {
               </div>
             </div>
 
-            {/* Right column */}
+            {/* Columna derecha */}
             <div className="space-y-8">
               <Card title={t('educationTitle')}>
-                <ul className="space-y-2 text-sm text-slate-300">
+                <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
                   {education.map((item, i) => (
                     <li key={i} className="flex gap-2">
-                      <span className="text-blue-400 mt-0.5">▸</span>
+                      <span className="text-indigo-500 mt-0.5 dark:text-blue-400">▸</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -226,10 +235,10 @@ export default async function Page({ params }: PageProps) {
               </Card>
 
               <Card title={t('languagesTitle')}>
-                <ul className="space-y-2 text-sm text-slate-300">
+                <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
                   {langs.map((lang, i) => (
                     <li key={i} className="flex gap-2">
-                      <span className="text-blue-400 mt-0.5">▸</span>
+                      <span className="text-indigo-500 mt-0.5 dark:text-blue-400">▸</span>
                       <span>{lang}</span>
                     </li>
                   ))}
@@ -237,7 +246,7 @@ export default async function Page({ params }: PageProps) {
               </Card>
 
               <Card title={t('competenciesTitle')}>
-                <p className="text-sm text-slate-300 leading-relaxed text-center">
+                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed text-center">
                   {t('competencies')}
                 </p>
               </Card>
@@ -257,8 +266,8 @@ export default async function Page({ params }: PageProps) {
         </div>
       </section>
 
-      <footer className="py-10 px-6 border-t border-white/10">
-        <div className="mx-auto max-w-4xl text-center text-sm text-slate-400">
+      <footer className="py-10 px-6 border-t border-indigo-100 dark:border-white/10">
+        <div className="mx-auto max-w-4xl text-center text-sm text-slate-400 dark:text-slate-500">
           Built with Next.js · Theme + i18n · © {new Date().getFullYear()}
         </div>
       </footer>
@@ -269,8 +278,11 @@ export default async function Page({ params }: PageProps) {
 /** Helpers (server-safe, no hooks) */
 function Card({title, children}: {title: string; children: React.ReactNode}) {
   return (
-    <div className="rounded-3xl border border-white/10 bg-white/5 p-7 sm:p-9">
-      <h2 className="text-xl font-semibold text-center mb-4">{title}</h2>
+    <div className="rounded-3xl border border-indigo-100 bg-white shadow-lg shadow-indigo-50 p-7 sm:p-9
+                    dark:border-white/10 dark:bg-white/5 dark:shadow-none">
+      <h2 className="text-xl font-bold text-center mb-4 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent dark:from-indigo-400 dark:to-purple-400">
+        {title}
+      </h2>
       {children}
     </div>
   );
@@ -279,14 +291,15 @@ function Card({title, children}: {title: string; children: React.ReactNode}) {
 function SkillBlock({title, items}: {title: string; items: string[]}) {
   return (
     <div>
-      <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400 text-center mb-3">
+      <h3 className="text-xs font-bold uppercase tracking-wider text-indigo-500 dark:text-indigo-400 text-center mb-3">
         {title}
       </h3>
       <div className="flex flex-wrap justify-center gap-2">
         {items.map((skill) => (
           <span
             key={skill}
-            className="rounded-xl border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-slate-200"
+            className="rounded-xl border border-indigo-100 bg-indigo-50 px-3 py-1.5 text-sm font-medium text-indigo-700
+                       dark:border-white/10 dark:bg-white/5 dark:text-slate-300"
           >
             {skill}
           </span>
